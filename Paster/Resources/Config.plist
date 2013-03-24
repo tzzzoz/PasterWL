@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Colors</key>
+	<dict>
+		<key>Black</key>
+		<integer>0</integer>
+		<key>Red</key>
+		<integer>1</integer>
+		<key>Yellow</key>
+		<integer>2</integer>
+		<key>LightBlue</key>
+		<integer>3</integer>
+		<key>GrassGreen</key>
+		<integer>4</integer>
+		<key>Purple</key>
+		<integer>5</integer>
+		<key>Brown</key>
+		<integer>6</integer>
+		<key>LightOrange</key>
+		<integer>7</integer>
+		<key>LightPurple</key>
+		<integer>8</integer>
+		<key>RoseRed</key>
+		<integer>9</integer>
+		<key>LightGreen</key>
+		<integer>10</integer>
+		<key>DarkPurple</key>
+		<integer>11</integer>
+		<key>Grey</key>
+		<integer>12</integer>
+		<key>Green</key>
+		<integer>13</integer>
+		<key>Blue</key>
+		<integer>14</integer>
+		<key>DarkBlue</key>
+		<integer>15</integer>
+		<key>DarkGreen</key>
+		<integer>16</integer>
+		<key>Pink</key>
+		<integer>17</integer>
+	</dict>
+	<key>Themes</key>
+	<array>
+		<dict>
+			<key>ThemeName</key>
+			<string>Theme0</string>
+			<key>GeoPasterCounts</key>
+			<integer>7</integer>
+			<key>PasterCounts</key>
+			<integer>12</integer>
+		</dict>
+		<dict>
+			<key>ThemeName</key>
+			<string>Theme1</string>
+			<key>GeoPasterCounts</key>
+			<integer>7</integer>
+			<key>PasterCounts</key>
+			<integer>12</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

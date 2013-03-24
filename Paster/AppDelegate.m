@@ -10,12 +10,17 @@
 
 @implementation AppDelegate
 
+@synthesize window,rootViewController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.rootViewController = [RootViewController sharedRootViewController];
+    self.window.rootViewController = rootViewController;
+    [self.window addSubview:rootViewController.view];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
