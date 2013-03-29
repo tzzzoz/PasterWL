@@ -10,7 +10,6 @@
 
 @implementation Configurer
 
-
 +(NSInteger)countOfThemes
 {
     NSDictionary *dict = [PlistLoader loadPlistByRelativePath:@"Config"];

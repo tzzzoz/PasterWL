@@ -11,7 +11,6 @@
 
 @interface Configurer : NSObject
 
-
 +(NSInteger)countOfThemes;
 +(NSInteger)countOfColors;
 +(NSMutableArray*)themeNames;

@@ -111,8 +111,6 @@
 		0AB82CE516EE0A1100357AF3 /* Configurer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB82CE416EE0A1100357AF3 /* Configurer.m */; };
 		0ADEB7131702918A00BF34EC /* ScreenShoter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADEB7121702918A00BF34EC /* ScreenShoter.m */; };
 		0ADEB7151702AFD900BF34EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADEB7141702AFD900BF34EC /* QuartzCore.framework */; };
-		0ADEB7181702B85B00BF34EC /* pageIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADEB7161702B85B00BF34EC /* pageIndicator.png */; };
-		0ADEB7191702B85B00BF34EC /* pageIndicatorDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADEB7171702B85B00BF34EC /* pageIndicatorDark.png */; };
 		0ADEB71B1702C88B00BF34EC /* PWMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADEB71A1702C88B00BF34EC /* PWMainView.xib */; };
 		0AE32E4116F89AF7006D05C1 /* PWPasterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE32E4016F89AF7006D05C1 /* PWPasterFactory.m */; };
 		0AEAED4016EF03EE00CD432E /* DataStorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEAED3F16EF03ED00CD432E /* DataStorer.m */; };
@@ -242,8 +240,6 @@
 		0ADEB7111702918A00BF34EC /* ScreenShoter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShoter.h; sourceTree = "<group>"; };
 		0ADEB7121702918A00BF34EC /* ScreenShoter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenShoter.m; sourceTree = "<group>"; };
 		0ADEB7141702AFD900BF34EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		0ADEB7161702B85B00BF34EC /* pageIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pageIndicator.png; sourceTree = "<group>"; };
-		0ADEB7171702B85B00BF34EC /* pageIndicatorDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pageIndicatorDark.png; sourceTree = "<group>"; };
 		0ADEB71A1702C88B00BF34EC /* PWMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PWMainView.xib; sourceTree = "<group>"; };
 		0AE32E3F16F89AF7006D05C1 /* PWPasterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PWPasterFactory.h; path = Classes/Models/DataModel/PWPasterFactory.h; sourceTree = "<group>"; };
 		0AE32E4016F89AF7006D05C1 /* PWPasterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PWPasterFactory.m; path = Classes/Models/DataModel/PWPasterFactory.m; sourceTree = "<group>"; };
@@ -411,8 +407,6 @@
 		0A2CBDA716F8895300CC35DA /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				0ADEB7161702B85B00BF34EC /* pageIndicator.png */,
-				0ADEB7171702B85B00BF34EC /* pageIndicatorDark.png */,
 				0A8C449C16FBE9C100AA1E38 /* frameImage0.png */,
 				0A8C449D16FBE9C100AA1E38 /* frameImage1.png */,
 				0A8C449E16FBE9C100AA1E38 /* frameImage2.png */,
@@ -704,8 +698,6 @@
 				0A8C44A516FBE9C100AA1E38 /* frameImage4.png in Resources */,
 				0A6FAC9F16FC925800C03A05 /* PWPasterEditView.xib in Resources */,
 				0A7FADEF16FFED7F00DA87C7 /* PWGeoPasterEditView.xib in Resources */,
-				0ADEB7181702B85B00BF34EC /* pageIndicator.png in Resources */,
-				0ADEB7191702B85B00BF34EC /* pageIndicatorDark.png in Resources */,
 				0ADEB71B1702C88B00BF34EC /* PWMainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

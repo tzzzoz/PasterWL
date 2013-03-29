@@ -14,7 +14,7 @@
 @interface PWMainViewController : UIViewController<UIScrollViewDelegate>
 {
     //视图对象
-    UIScrollView *scrollView;
+    UIScrollView *themeScrollView;
     UIPageControl *pageControl;
     NSMutableArray *themeButtonArray;
     
@@ -23,7 +23,7 @@
     PWThemeFactory *themeFactory;
 }
 
-@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIScrollView *themeScrollView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) NSMutableArray *themeButtonArray;
 

@@ -14,7 +14,7 @@
 
 @implementation PWMainViewController
 
-@synthesize scrollView, pageControl, themeButtonArray;
+@synthesize themeScrollView, pageControl, themeButtonArray;
 @synthesize themeFactory;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -56,18 +56,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 230, 1024, 450)];
+    themeScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 230, 1024, 450)];
     
-    //计算scrollView的宽度
+    //计算themeScrollView的宽度
     NSInteger gap = 135;
     NSInteger sideBar = 232;
     NSInteger widthOfThemeButton = 560;
     NSInteger countOfThemeButtons = [themeButtonArray count];
     NSInteger contentWidth = 2 * sideBar + countOfThemeButtons * widthOfThemeButton + (countOfThemeButtons - 1) * gap;
-    scrollView.contentSize = CGSizeMake(contentWidth, 450);
-    scrollView.pagingEnabled = YES;
-    scrollView.showsHorizontalScrollIndicator = NO;
-    scrollView.showsVerticalScrollIndicator = NO;
+    themeScrollView.contentSize = CGSizeMake(contentWidth, 450);
+    themeScrollView.pagingEnabled = YES;
+    themeScrollView.delegate = self;
+    themeScrollView.showsHorizontalScrollIndicator = NO;
+    themeScrollView.showsVerticalScrollIndicator = NO;
 
     //添加themeButton到scrollView
     for (int i = 0; i < countOfThemeButtons; i++) {
@@ -79,21 +80,21 @@
         [themeButton setImageEdgeInsets:UIEdgeInsetsMake(19, 19, 23, 26)];
         [themeButton addTarget:self action:@selector(tapThemeButton:) forControlEvents:UIControlEventTouchUpInside];
         
-        [scrollView addSubview:themeButton];
+        [themeScrollView addSubview:themeButton];
     }
-    [self.view addSubview:scrollView];
+    [self.view addSubview:themeScrollView];
     
     
     //添加pageControl控件
     int pagesCount = countOfThemeButtons;
     pageControl = [[UIPageControl alloc] init];
+    [pageControl setBounds:CGRectMake(0,0,1024,30)];
     pageControl.center = CGPointMake(512, 700);
-    [pageControl sizeToFit];
+//    [pageControl sizeToFit];
     pageControl.numberOfPages = pagesCount;
     pageControl.currentPage = 0;
-//    [pageControl setBounds:CGRectMake(0,0,16*(pagesCount-1)+16,16)];
     [pageControl.layer setCornerRadius:8];
-    pageControl.backgroundColor = [UIColor blackColor];
+//    pageControl.backgroundColor = [UIColor blackColor];
     pageControl.pageIndicatorTintColor = [UIColor grayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
 
@@ -101,6 +102,17 @@
     [self.view addSubview:pageControl];
     NSLog(@"X: %f", pageControl.frame.origin.x);
 }
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    CGPoint offset = scrollView.contentOffset;
+    UIView *subView0 = [scrollView.subviews objectAtIndex:0];
+    UIView *subView1 = [scrollView.subviews objectAtIndex:1];
+    NSInteger offsetUnitX = subView1.frame.origin.x - subView0.frame.origin.x;
+    
+    pageControl.currentPage = offset.x / offsetUnitX;
+}
+
 
 - (void)didReceiveMemoryWarning
 {

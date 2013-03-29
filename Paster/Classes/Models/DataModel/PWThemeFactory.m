@@ -44,12 +44,18 @@
     NSString *relativePath = [Configurer plistPath:themeName];
     NSDictionary *themeDict = [PlistLoader loadPlistByRelativePath:relativePath];
     
-    NSArray *pasterArray = [themeDict objectForKey:@"Pasters"];
-    NSArray *geoPasterModelArray = [themeDict objectForKey:@"GeoPasterModels"];
-    NSArray *geoPasterArray = [themeDict objectForKey:@"GeoPasters"];
-    NSDictionary *specificPositionDict = [themeDict objectForKey:@"SpecificPosition"];
+    [self createPastersWithDict:themeDict forTheme:theme];
+    [self createGeoPasterModelWithDict:themeDict forTheme:theme];
+    [self createGeoPasterEmptyWithDict:themeDict forTheme:theme];
     
-    //创建贴纸,利用Plist中的信息
+    [themeArray addObject:theme];
+}
+
+
+//创建贴纸,利用Plist中的信息
+-(void)createPastersWithDict:(NSDictionary*)themeDict forTheme:(PWTheme*)theme
+{
+    NSArray *pasterArray = [themeDict objectForKey:@"Pasters"];
     for (NSDictionary *pasterDict in pasterArray) {
         NSInteger x = [[pasterDict objectForKey:@"X"] intValue];
         NSInteger y = [[pasterDict objectForKey:@"Y"] intValue];
@@ -59,13 +65,18 @@
         NSString* fileName = [pasterDict objectForKey:@"FileName"];
         
         PWPaster *paster = [delegate createPasterWithRect:CGRectMake(x, y, width, height)
-                             imageFile:fileName
-                       imageFolderPath:[Configurer imageFolderPath:themeName]];
+                                                imageFile:fileName
+                                          imageFolderPath:[Configurer imageFolderPath:theme.themeName]];
         [[theme pasters] addObject:paster];
     }
+}
+
+//创建几何贴纸Model,利用Plist中的信息
+-(void)createGeoPasterModelWithDict:(NSDictionary*)themeDict forTheme:(PWTheme*)theme
+{
+    NSArray *geoPasterModelArray = [themeDict objectForKey:@"GeoPasterModels"];
+    NSDictionary *specificPositionDict = [themeDict objectForKey:@"SpecificPosition"];
     
-    
-    //创建几何贴纸Model,利用Plist中的信息
     NSDictionary *geoModelPositionDict = [specificPositionDict objectForKey:@"GeoModel"];
     NSInteger startX = [[geoModelPositionDict objectForKey:@"StartX"] intValue];
     NSInteger startY = [[geoModelPositionDict objectForKey:@"StartY"] intValue];
@@ -88,7 +99,7 @@
                                                                         type:type
                                                                        color:color
                                                                    imageFile:fileName
-                                                             imageFolderPath:[Configurer imageFolderPath:themeName]];
+                                                             imageFolderPath:[Configurer imageFolderPath:theme.themeName]];
         [[theme geoPasterModels] addObject:geoPasterModel];
         
         NSMutableArray *specificShapeArray = [[NSMutableArray alloc] init];
@@ -97,14 +108,20 @@
         
         index++;
     }
+}
+
+//创建默认的几何贴纸
+-(void)createGeoPasterEmptyWithDict:(NSDictionary*)themeDict forTheme:(PWTheme*)theme
+{
+    NSArray *geoPasterArray = [themeDict objectForKey:@"GeoPasters"];
+    NSDictionary *specificPositionDict = [themeDict objectForKey:@"SpecificPosition"];
     
-    //创建默认的几何贴纸
     NSDictionary *geoPasterPositionDict = [specificPositionDict objectForKey:@"GeoPaster"];
-    startX = [[geoPasterPositionDict objectForKey:@"StartX"] intValue];
-    startY = [[geoPasterPositionDict objectForKey:@"StartY"] intValue];
-    gapLength = [[geoPasterPositionDict objectForKey:@"GapLength"] intValue];
-    width = [[geoPasterPositionDict objectForKey:@"Width"] intValue];
-    height = [[geoPasterPositionDict objectForKey:@"Height"] intValue];
+    NSInteger startX = [[geoPasterPositionDict objectForKey:@"StartX"] intValue];
+    NSInteger startY = [[geoPasterPositionDict objectForKey:@"StartY"] intValue];
+    NSInteger gapLength = [[geoPasterPositionDict objectForKey:@"GapLength"] intValue];
+    NSInteger width = [[geoPasterPositionDict objectForKey:@"Width"] intValue];
+    NSInteger height = [[geoPasterPositionDict objectForKey:@"Height"] intValue];
     
     NSInteger outsideCount = [[theme geoPasterContainer] count];
     
@@ -120,7 +137,7 @@
                                                                      type:type
                                                                     color:color
                                                                 imageFile:fileName
-                                                          imageFolderPath:[Configurer imageFolderPath:themeName]];
+                                                          imageFolderPath:[Configurer imageFolderPath:theme.themeName]];
         [specificShapeArray addObject:geoPasterDefault];
         
         NSInteger insideCount = [Configurer countOfColors];
@@ -132,13 +149,12 @@
             frame = CGRectMake(x, y, width, height);
             NSString *newFileName = [@"Empty" stringByAppendingString:[fileName substringFromIndex:7]];
             
-            PWGeoPaster *geoPaster = [delegate createGeoPasterEmptyWithRect:frame type:type color:color imageFile:newFileName imageFolderPath:[Configurer imageFolderPath:themeName]];
+            PWGeoPaster *geoPaster = [delegate createGeoPasterEmptyWithRect:frame type:type color:color imageFile:newFileName imageFolderPath:[Configurer imageFolderPath:theme.themeName]];
             [specificShapeArray addObject:geoPaster];
         }
         
     }
-    
-    [themeArray addObject:theme];
 }
+
 
 @end
