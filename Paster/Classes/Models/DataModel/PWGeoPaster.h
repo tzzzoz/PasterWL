@@ -12,10 +12,12 @@
 @interface PWGeoPaster : PWAbstractPaster<NSCoding> {
     GeometryType type;
     ColorType   color;
+    BOOL    isCreated;                  //default is NO
 }
 
 @property (nonatomic) GeometryType type;
 @property (nonatomic) ColorType color;
+@property (nonatomic) BOOL isCreated;
 
 -(id)initWithFrame:(CGRect)rect
          imageData:(NSData *)binaryData

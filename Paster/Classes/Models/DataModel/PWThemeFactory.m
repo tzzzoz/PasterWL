@@ -98,7 +98,7 @@
         index++;
     }
     
-    //TODO 创建默认的几何贴纸
+    //创建默认的几何贴纸
     NSDictionary *geoPasterPositionDict = [specificPositionDict objectForKey:@"GeoPaster"];
     startX = [[geoPasterPositionDict objectForKey:@"StartX"] intValue];
     startY = [[geoPasterPositionDict objectForKey:@"StartY"] intValue];

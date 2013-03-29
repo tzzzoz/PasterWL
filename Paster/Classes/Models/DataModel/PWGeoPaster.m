@@ -10,7 +10,7 @@
 
 @implementation PWGeoPaster
 
-@synthesize type, color;
+@synthesize type,color, isCreated;
 
 -(id)init
 {
@@ -34,6 +34,7 @@
     if (self) {
         [self setType:geometryType];
         [self setColor:colorType];
+        isCreated = NO;
     }
     return self;
 }

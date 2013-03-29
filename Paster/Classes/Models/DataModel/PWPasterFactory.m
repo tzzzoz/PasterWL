@@ -31,6 +31,7 @@
     NSData *data = [ImageConverter imageToData:[path stringByAppendingFormat:@"/CreatedGeometries/%@", fileName]];
     PWGeoPaster *geoPaster = [[PWGeoPaster alloc] initWithFrame:rect imageData:data type:type color:color];
     geoPaster.frame = rect;
+    geoPaster.isCreated = YES;
     return geoPaster;
 }
 
@@ -43,6 +44,7 @@
     NSData *data = [ImageConverter imageToData:[path stringByAppendingFormat:@"/EmptyGeomatries/%@", fileName]];
     PWGeoPaster *geoPaster = [[PWGeoPaster alloc] initWithFrame:rect imageData:data type:type color:color];
     geoPaster.frame = rect;
+    geoPaster.isCreated = NO;
     return geoPaster;
 }
 

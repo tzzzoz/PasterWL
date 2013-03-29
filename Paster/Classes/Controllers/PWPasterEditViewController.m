@@ -16,7 +16,7 @@
 
 @synthesize geoModelScrollView, colorGeoScrollView, pasterView, geoModelButtonArray, colorGeoButtonArray;
 
-@synthesize selectedPaster, themeOnwer;
+@synthesize selectedPaster, themeOnwer, specificShapeArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,7 +49,7 @@
 -(void)tapGeoModelButton:(UIButton *)button
 {
     NSInteger selectedIndex = [geoModelButtonArray indexOfObject:button];
-    NSMutableArray *specificShapeArray = [[themeOnwer geoPasterContainer] objectAtIndex:selectedIndex];
+    specificShapeArray = [[themeOnwer geoPasterContainer] objectAtIndex:selectedIndex];
     
     NSInteger count = [specificShapeArray count];
     for (int i = 1; i < count; i++) {
@@ -57,6 +57,7 @@
         UIButton *colorGeoButton = [[UIButton alloc] initWithFrame:geoPaster.frame];
         UIImage *image = [ImageConverter dataToImage:[geoPaster imageData]];
         [colorGeoButton setImage:image forState:UIControlStateNormal];
+        [colorGeoButton addTarget:self action:@selector(tapColorGeoButton:) forControlEvents:UIControlEventTouchUpInside];
         
         [self.colorGeoButtonArray addObject:colorGeoButton];
         [self.colorGeoScrollView addSubview:colorGeoButton];
@@ -69,6 +70,18 @@
     [self.geoModelScrollView removeFromSuperview];
     [self.view addSubview:colorGeoScrollView];
     
+}
+
+
+-(void)tapColorGeoButton:(UIButton *)button
+{
+    [button setHighlighted:NO];
+    NSInteger selectedIndex = [colorGeoButtonArray indexOfObject:button] + 1;
+    PWGeoPaster *selectedColorGeoPaster = [specificShapeArray objectAtIndex:selectedIndex];
+    PWGeoPasterEditViewController *geoPasterEditViewController = [[PWGeoPasterEditViewController alloc] initWithNibName:@"PWGeoPasterEditView" bundle:nil];
+    [geoPasterEditViewController setSelectedColorGeoPaster:selectedColorGeoPaster];
+    [[RootViewController sharedRootViewController] pushViewController:geoPasterEditViewController];
+    [[geoPasterEditViewController zoomOutButton] setImage:[ScreenShoter imageFromView:[self view] Frame:CGRectMake(0, 0, 1024, 768)] forState:UIControlStateNormal];
 }
 
 

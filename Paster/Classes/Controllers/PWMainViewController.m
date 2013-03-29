@@ -14,7 +14,7 @@
 
 @implementation PWMainViewController
 
-@synthesize scrollView,themeButtonArray;
+@synthesize scrollView, pageControl, themeButtonArray;
 @synthesize themeFactory;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -56,24 +56,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 230, 1024, 460)];
-//    [scrollView setBackgroundColor:[UIColor blackColor]];
+    scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 230, 1024, 450)];
     
     //计算scrollView的宽度
     NSInteger gap = 135;
-    NSInteger sideBar = 235;
-    NSInteger widthOfThemeButton = 540;
+    NSInteger sideBar = 232;
+    NSInteger widthOfThemeButton = 560;
     NSInteger countOfThemeButtons = [themeButtonArray count];
-    NSInteger scrollerViewWidth = 2 * sideBar + countOfThemeButtons * widthOfThemeButton + (countOfThemeButtons - 1) * gap;
-    scrollView.contentSize = CGSizeMake(scrollerViewWidth, 350);
-    scrollView.contentOffset = CGPointMake(0, 0);
-    [scrollView setBouncesZoom:NO];
-    
-    
+    NSInteger contentWidth = 2 * sideBar + countOfThemeButtons * widthOfThemeButton + (countOfThemeButtons - 1) * gap;
+    scrollView.contentSize = CGSizeMake(contentWidth, 450);
+    scrollView.pagingEnabled = YES;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.showsVerticalScrollIndicator = NO;
+
     //添加themeButton到scrollView
     for (int i = 0; i < countOfThemeButtons; i++) {
         UIButton *themeButton = [themeButtonArray objectAtIndex:i];
-        [themeButton setFrame:CGRectMake(235+i*(540+135), 55, 540, 350)];
+        themeButton.frame = CGRectMake(sideBar + i * (widthOfThemeButton + gap), 20, widthOfThemeButton, 420);
         NSString *imagePath = [Configurer imagePath:[@"frameImage" stringByAppendingFormat:@"%i.png", i%5]];
         UIImage *bgImage = [UIImage imageWithContentsOfFile:imagePath];
         [themeButton setBackgroundImage:bgImage forState:UIControlStateNormal];
@@ -82,7 +81,25 @@
         
         [scrollView addSubview:themeButton];
     }
-    [[self view] addSubview:scrollView];
+    [self.view addSubview:scrollView];
+    
+    
+    //添加pageControl控件
+    int pagesCount = countOfThemeButtons;
+    pageControl = [[UIPageControl alloc] init];
+    pageControl.center = CGPointMake(512, 700);
+    [pageControl sizeToFit];
+    pageControl.numberOfPages = pagesCount;
+    pageControl.currentPage = 0;
+//    [pageControl setBounds:CGRectMake(0,0,16*(pagesCount-1)+16,16)];
+    [pageControl.layer setCornerRadius:8];
+    pageControl.backgroundColor = [UIColor blackColor];
+    pageControl.pageIndicatorTintColor = [UIColor grayColor];
+    pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
+
+    NSLog(@"Y: %f", pageControl.frame.origin.y);
+    [self.view addSubview:pageControl];
+    NSLog(@"X: %f", pageControl.frame.origin.x);
 }
 
 - (void)didReceiveMemoryWarning

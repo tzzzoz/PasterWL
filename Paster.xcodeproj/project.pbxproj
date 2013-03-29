@@ -11,7 +11,6 @@
 		0A0635F516F17B4600076E22 /* PWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0635F416F17B4600076E22 /* PWMainViewController.m */; };
 		0A2CBD6016F8882E00CC35DA /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CBD5C16F8882D00CC35DA /* Config.plist */; };
 		0A2CBD6216F8882E00CC35DA /* Theme0 in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CBD5E16F8882E00CC35DA /* Theme0 */; };
-		0A2CBD6716F8887A00CC35DA /* PWMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CBD6616F8887A00CC35DA /* PWMainView.xib */; };
 		0A2CBDBC16F8895300CC35DA /* AUVbackgroundImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CBD6A16F8895300CC35DA /* AUVbackgroundImage.png */; };
 		0A2CBDBD16F8895300CC35DA /* returnButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CBD6B16F8895300CC35DA /* returnButton.png */; };
 		0A2CBDBE16F8895300CC35DA /* shareBackgroungImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A2CBD6C16F8895300CC35DA /* shareBackgroungImage.png */; };
@@ -98,7 +97,8 @@
 		0A5E900616EDECFF00B8AEAA /* PWPaster.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E900316EDECFF00B8AEAA /* PWPaster.m */; };
 		0A6FAC9F16FC925800C03A05 /* PWPasterEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6FAC9E16FC925800C03A05 /* PWPasterEditView.xib */; };
 		0A6FACA216FC95A700C03A05 /* PWPasterEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6FACA116FC95A700C03A05 /* PWPasterEditViewController.m */; };
-		0A8C448D16FB2EB900AA1E38 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8C448C16FB2EB900AA1E38 /* QuartzCore.framework */; };
+		0A7FADEF16FFED7F00DA87C7 /* PWGeoPasterEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A7FADEE16FFED7F00DA87C7 /* PWGeoPasterEditView.xib */; };
+		0A7FADF216FFEF6100DA87C7 /* PWGeoPasterEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7FADF116FFEF6100DA87C7 /* PWGeoPasterEditViewController.m */; };
 		0A8C449B16FB409300AA1E38 /* Theme1 in Resources */ = {isa = PBXBuildFile; fileRef = 0A8C449A16FB409300AA1E38 /* Theme1 */; };
 		0A8C44A116FBE9C100AA1E38 /* frameImage0.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8C449C16FBE9C100AA1E38 /* frameImage0.png */; };
 		0A8C44A216FBE9C100AA1E38 /* frameImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A8C449D16FBE9C100AA1E38 /* frameImage1.png */; };
@@ -109,6 +109,11 @@
 		0AB7BFB816F8658C00DC04A2 /* PWThemeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7BFB716F8658C00DC04A2 /* PWThemeFactory.m */; };
 		0AB7BFBB16F8728400DC04A2 /* PWTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB7BFBA16F8728400DC04A2 /* PWTheme.m */; };
 		0AB82CE516EE0A1100357AF3 /* Configurer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB82CE416EE0A1100357AF3 /* Configurer.m */; };
+		0ADEB7131702918A00BF34EC /* ScreenShoter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADEB7121702918A00BF34EC /* ScreenShoter.m */; };
+		0ADEB7151702AFD900BF34EC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ADEB7141702AFD900BF34EC /* QuartzCore.framework */; };
+		0ADEB7181702B85B00BF34EC /* pageIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADEB7161702B85B00BF34EC /* pageIndicator.png */; };
+		0ADEB7191702B85B00BF34EC /* pageIndicatorDark.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ADEB7171702B85B00BF34EC /* pageIndicatorDark.png */; };
+		0ADEB71B1702C88B00BF34EC /* PWMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ADEB71A1702C88B00BF34EC /* PWMainView.xib */; };
 		0AE32E4116F89AF7006D05C1 /* PWPasterFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE32E4016F89AF7006D05C1 /* PWPasterFactory.m */; };
 		0AEAED4016EF03EE00CD432E /* DataStorer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEAED3F16EF03ED00CD432E /* DataStorer.m */; };
 /* End PBXBuildFile section */
@@ -120,7 +125,6 @@
 		0A0635F416F17B4600076E22 /* PWMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWMainViewController.m; sourceTree = "<group>"; };
 		0A2CBD5C16F8882D00CC35DA /* Config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Config.plist; path = Resources/Config.plist; sourceTree = "<group>"; };
 		0A2CBD5E16F8882E00CC35DA /* Theme0 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Theme0; path = Resources/Theme0; sourceTree = "<group>"; };
-		0A2CBD6616F8887A00CC35DA /* PWMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PWMainView.xib; sourceTree = "<group>"; };
 		0A2CBD6A16F8895300CC35DA /* AUVbackgroundImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUVbackgroundImage.png; sourceTree = "<group>"; };
 		0A2CBD6B16F8895300CC35DA /* returnButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = returnButton.png; sourceTree = "<group>"; };
 		0A2CBD6C16F8895300CC35DA /* shareBackgroungImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shareBackgroungImage.png; sourceTree = "<group>"; };
@@ -218,7 +222,9 @@
 		0A6FAC9E16FC925800C03A05 /* PWPasterEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PWPasterEditView.xib; sourceTree = "<group>"; };
 		0A6FACA016FC95A700C03A05 /* PWPasterEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWPasterEditViewController.h; sourceTree = "<group>"; };
 		0A6FACA116FC95A700C03A05 /* PWPasterEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWPasterEditViewController.m; sourceTree = "<group>"; };
-		0A8C448C16FB2EB900AA1E38 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0A7FADEE16FFED7F00DA87C7 /* PWGeoPasterEditView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PWGeoPasterEditView.xib; sourceTree = "<group>"; };
+		0A7FADF016FFEF6100DA87C7 /* PWGeoPasterEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWGeoPasterEditViewController.h; sourceTree = "<group>"; };
+		0A7FADF116FFEF6100DA87C7 /* PWGeoPasterEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWGeoPasterEditViewController.m; sourceTree = "<group>"; };
 		0A8C449A16FB409300AA1E38 /* Theme1 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Theme1; path = Resources/Theme1; sourceTree = "<group>"; };
 		0A8C449C16FBE9C100AA1E38 /* frameImage0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frameImage0.png; sourceTree = "<group>"; };
 		0A8C449D16FBE9C100AA1E38 /* frameImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frameImage1.png; sourceTree = "<group>"; };
@@ -233,6 +239,12 @@
 		0AB7BFBA16F8728400DC04A2 /* PWTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PWTheme.m; path = Classes/Models/DataModel/PWTheme.m; sourceTree = "<group>"; };
 		0AB82CE316EE0A1100357AF3 /* Configurer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configurer.h; sourceTree = "<group>"; };
 		0AB82CE416EE0A1100357AF3 /* Configurer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configurer.m; sourceTree = "<group>"; };
+		0ADEB7111702918A00BF34EC /* ScreenShoter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShoter.h; sourceTree = "<group>"; };
+		0ADEB7121702918A00BF34EC /* ScreenShoter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenShoter.m; sourceTree = "<group>"; };
+		0ADEB7141702AFD900BF34EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0ADEB7161702B85B00BF34EC /* pageIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pageIndicator.png; sourceTree = "<group>"; };
+		0ADEB7171702B85B00BF34EC /* pageIndicatorDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pageIndicatorDark.png; sourceTree = "<group>"; };
+		0ADEB71A1702C88B00BF34EC /* PWMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PWMainView.xib; sourceTree = "<group>"; };
 		0AE32E3F16F89AF7006D05C1 /* PWPasterFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PWPasterFactory.h; path = Classes/Models/DataModel/PWPasterFactory.h; sourceTree = "<group>"; };
 		0AE32E4016F89AF7006D05C1 /* PWPasterFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PWPasterFactory.m; path = Classes/Models/DataModel/PWPasterFactory.m; sourceTree = "<group>"; };
 		0AEAED3E16EF03ED00CD432E /* DataStorer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStorer.h; sourceTree = "<group>"; };
@@ -244,7 +256,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A8C448D16FB2EB900AA1E38 /* QuartzCore.framework in Frameworks */,
+				0ADEB7151702AFD900BF34EC /* QuartzCore.framework in Frameworks */,
 				0A3F3F5716E7795D0096D664 /* UIKit.framework in Frameworks */,
 				0A3F3F5916E7795D0096D664 /* Foundation.framework in Frameworks */,
 				0A3F3F5B16E7795D0096D664 /* CoreGraphics.framework in Frameworks */,
@@ -265,6 +277,8 @@
 				0A3283AC16F9B2190045F220 /* PWWonderlandViewController.m */,
 				0A6FACA016FC95A700C03A05 /* PWPasterEditViewController.h */,
 				0A6FACA116FC95A700C03A05 /* PWPasterEditViewController.m */,
+				0A7FADF016FFEF6100DA87C7 /* PWGeoPasterEditViewController.h */,
+				0A7FADF116FFEF6100DA87C7 /* PWGeoPasterEditViewController.m */,
 			);
 			name = Controllers;
 			path = Classes/Controllers;
@@ -286,9 +300,10 @@
 		0A2CBD6516F8887A00CC35DA /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
-				0A2CBD6616F8887A00CC35DA /* PWMainView.xib */,
 				0A3283A916F9B19E0045F220 /* PWWonderlandView.xib */,
+				0ADEB71A1702C88B00BF34EC /* PWMainView.xib */,
 				0A6FAC9E16FC925800C03A05 /* PWPasterEditView.xib */,
+				0A7FADEE16FFED7F00DA87C7 /* PWGeoPasterEditView.xib */,
 			);
 			name = Xibs;
 			path = Resources/Xibs;
@@ -396,6 +411,8 @@
 		0A2CBDA716F8895300CC35DA /* MainView */ = {
 			isa = PBXGroup;
 			children = (
+				0ADEB7161702B85B00BF34EC /* pageIndicator.png */,
+				0ADEB7171702B85B00BF34EC /* pageIndicatorDark.png */,
 				0A8C449C16FBE9C100AA1E38 /* frameImage0.png */,
 				0A8C449D16FBE9C100AA1E38 /* frameImage1.png */,
 				0A8C449E16FBE9C100AA1E38 /* frameImage2.png */,
@@ -427,7 +444,6 @@
 		0A3F3F4A16E7795D0096D664 = {
 			isa = PBXGroup;
 			children = (
-				0A8C448C16FB2EB900AA1E38 /* QuartzCore.framework */,
 				0A3F3F5C16E7795D0096D664 /* Paster */,
 				0A3F3F5516E7795D0096D664 /* Frameworks */,
 				0A3F3F5416E7795D0096D664 /* Products */,
@@ -445,6 +461,7 @@
 		0A3F3F5516E7795D0096D664 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0ADEB7141702AFD900BF34EC /* QuartzCore.framework */,
 				0A3F3F5616E7795D0096D664 /* UIKit.framework */,
 				0A3F3F5816E7795D0096D664 /* Foundation.framework */,
 				0A3F3F5A16E7795D0096D664 /* CoreGraphics.framework */,
@@ -482,6 +499,7 @@
 		0A3F3F7316E7798E0096D664 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0ADEB7101702918100BF34EC /* ScreenShoter */,
 				0AB82CE216EE0A1100357AF3 /* FileIO */,
 				0A5E8FF116ED797300B8AEAA /* ImageConverter */,
 				0A5E8FE916ED780500B8AEAA /* DataModel */,
@@ -541,6 +559,16 @@
 			path = Classes/Models/FileIO;
 			sourceTree = "<group>";
 		};
+		0ADEB7101702918100BF34EC /* ScreenShoter */ = {
+			isa = PBXGroup;
+			children = (
+				0ADEB7111702918A00BF34EC /* ScreenShoter.h */,
+				0ADEB7121702918A00BF34EC /* ScreenShoter.m */,
+			);
+			name = ScreenShoter;
+			path = Classes/Models/ScreenShoter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -598,7 +626,6 @@
 				0A3F3F6D16E7795D0096D664 /* Default-568h@2x.png in Resources */,
 				0A2CBD6016F8882E00CC35DA /* Config.plist in Resources */,
 				0A2CBD6216F8882E00CC35DA /* Theme0 in Resources */,
-				0A2CBD6716F8887A00CC35DA /* PWMainView.xib in Resources */,
 				0A2CBDBC16F8895300CC35DA /* AUVbackgroundImage.png in Resources */,
 				0A2CBDBD16F8895300CC35DA /* returnButton.png in Resources */,
 				0A2CBDBE16F8895300CC35DA /* shareBackgroungImage.png in Resources */,
@@ -676,6 +703,10 @@
 				0A8C44A416FBE9C100AA1E38 /* frameImage3.png in Resources */,
 				0A8C44A516FBE9C100AA1E38 /* frameImage4.png in Resources */,
 				0A6FAC9F16FC925800C03A05 /* PWPasterEditView.xib in Resources */,
+				0A7FADEF16FFED7F00DA87C7 /* PWGeoPasterEditView.xib in Resources */,
+				0ADEB7181702B85B00BF34EC /* pageIndicator.png in Resources */,
+				0ADEB7191702B85B00BF34EC /* pageIndicatorDark.png in Resources */,
+				0ADEB71B1702C88B00BF34EC /* PWMainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +733,8 @@
 				0AE32E4116F89AF7006D05C1 /* PWPasterFactory.m in Sources */,
 				0A3283AD16F9B2190045F220 /* PWWonderlandViewController.m in Sources */,
 				0A6FACA216FC95A700C03A05 /* PWPasterEditViewController.m in Sources */,
+				0A7FADF216FFEF6100DA87C7 /* PWGeoPasterEditViewController.m in Sources */,
+				0ADEB7131702918A00BF34EC /* ScreenShoter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

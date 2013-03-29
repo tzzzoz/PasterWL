@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "RootViewController.h"
 #import "PWPaster.h"
+#import "ScreenShoter.h"
 
 @interface PWPasterEditViewController : UIViewController
 {
@@ -20,7 +22,9 @@
     NSMutableArray *colorGeoButtonArray;
     
     //模型对象
+    PWPaster *selectedPaster;
     PWTheme *themeOnwer;
+    NSMutableArray *specificShapeArray;
 }
 
 @property (nonatomic, strong) UIScrollView *geoModelScrollView;
@@ -32,6 +36,7 @@
 
 @property (nonatomic, strong) PWPaster *selectedPaster;
 @property (nonatomic, strong) PWTheme *themeOnwer;
+@property (nonatomic, strong) NSMutableArray *specificShapeArray;
 
 -(IBAction)returnBack:(id)sender;
 -(void)tapGeoModelButton:(UIButton *)button;

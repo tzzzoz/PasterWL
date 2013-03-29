@@ -11,10 +11,11 @@
 #import "PWThemeFactory.h"
 #import "PWPasterFactory.h"
 
-@interface PWMainViewController : UIViewController
+@interface PWMainViewController : UIViewController<UIScrollViewDelegate>
 {
     //视图对象
     UIScrollView *scrollView;
+    UIPageControl *pageControl;
     NSMutableArray *themeButtonArray;
     
     
@@ -23,6 +24,7 @@
 }
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) NSMutableArray *themeButtonArray;
 
 @property (nonatomic, strong) PWThemeFactory *themeFactory;

@@ -10,6 +10,7 @@
 #import "PWMainViewController.h"
 #import "PWWonderlandViewController.h"
 #import "PWPasterEditViewController.h"
+#import "PWGeoPasterEditViewController.h"
 
 @class PWMainViewController;
 @class PWWonderlandViewController;
